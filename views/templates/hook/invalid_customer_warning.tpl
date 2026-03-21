@@ -1,0 +1,1 @@
+<p>Um ou mais campos obrigatórios não foram preenchidos em seu cadastro. Para concluir o seu pedido, <a href='{$link->getPageLink('identity')}'>clique aqui</a> para atualizar suas informações pessoais.</p>

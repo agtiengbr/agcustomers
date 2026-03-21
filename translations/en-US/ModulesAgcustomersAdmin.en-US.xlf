@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="ModulesAgcustomersAdmin" source-language="en" target-language="en" datatype="plaintext">
+    <body>
+      <trans-unit id="placeholder"><source>Placeholder</source><target state="translated">Placeholder</target></trans-unit>
+
+      <!-- Age limit settings (Admin) -->
+      <trans-unit id="t0210"><source>Minimum age (years)</source><target state="translated">Minimum age (years)</target></trans-unit>
+      <trans-unit id="t0211"><source>Maximum age (years)</source><target state="translated">Maximum age (years)</target></trans-unit>
+      <trans-unit id="t0212"><source>Leave 0 to disable minimum age check.</source><target state="translated">Leave 0 to disable minimum age check.</target></trans-unit>
+      <trans-unit id="t0213"><source>Leave 0 to disable maximum age check.</source><target state="translated">Leave 0 to disable maximum age check.</target></trans-unit>
+    </body>
+  </file>
+</xliff>

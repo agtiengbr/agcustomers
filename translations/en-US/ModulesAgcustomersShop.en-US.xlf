@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="ModulesAgcustomersShop" source-language="en" target-language="en" datatype="plaintext">
+    <body>
+  <trans-unit id="placeholder"><source>Placeholder</source><target state="translated">Placeholder</target></trans-unit>
+  <trans-unit id="m0001"><source>Issues found in your registration</source><target state="translated">Issues found in your registration</target></trans-unit>
+  <trans-unit id="m0002"><source>To proceed with the purchase, please correct the fields below:</source><target state="translated">To proceed with the purchase, please correct the fields below:</target></trans-unit>
+      <trans-unit id="s0017a"><source>The field %label% is required.</source><target state="translated">The field %label% is required.</target></trans-unit>
+      <trans-unit id="s0019a"><source>The field %label% must be a valid date (YYYY-MM-DD).</source><target state="translated">The field %label% must be a valid date (YYYY-MM-DD).</target></trans-unit>
+      <!-- Age validation messages and label (Shop domain) -->
+      <trans-unit id="s0020"><source>You must be at least %min% years old.</source><target state="translated">You must be at least %min% years old.</target></trans-unit>
+      <trans-unit id="s0021"><source>The maximum allowed age is %max% years.</source><target state="translated">The maximum allowed age is %max% years.</target></trans-unit>
+      <trans-unit id="s0022"><source>Date of birth</source><target state="translated">Date of birth</target></trans-unit>
+    </body>
+  </file>
+</xliff>

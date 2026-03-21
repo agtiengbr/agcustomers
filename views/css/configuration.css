@@ -1,0 +1,104 @@
+img.img-thumbnail{
+	max-width: 800px !important;
+	margin: 11px !important;
+}
+
+#tabCustomers .nav > li i.icon-times{
+	position: absolute;
+    right: 20px;
+    top: 15px;
+    color: red;
+    z-index: 100;
+    cursor: pointer;
+}
+
+#tabCustomers .nav > li i.icon-times.disabled{
+	color: #ffcfcf;
+}
+
+a.disabled {
+	cursor: not-allowed;
+}
+
+#tabCustomers .nav > li{
+	float: none;
+}
+
+#tabCustomers .nav > li a{
+	border: 1px solid #ddd;
+}
+
+.select-options .icon-check {
+	border-radius: .25rem;
+    padding: .25rem;
+    background: mediumseagreen;
+    color: white;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	cursor: pointer;
+}
+
+.select-options .icon-check:not(.confirm-option) {
+	cursor: auto;
+}
+
+.select-options .confirm-option.disabled {
+	pointer-events: none;
+	background-color: gray;
+	opacity: 0.8;
+}
+
+.select-options .icon-trash {
+	border-radius: .25rem;
+    padding: .25rem;
+    background: indianred;
+    color: white;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	cursor: pointer;
+}
+
+.select-options tr {
+	min-height: 39px;
+}
+
+.select-options td.select-options-icons {
+	display: flex;
+    gap: .25rem;
+    height: 56px;
+    align-items: center;
+    justify-content: center;
+}
+
+.select-options td.icon-trash-td {
+	display: flex;
+    justify-content: end;
+}
+
+.select-options .table-light {
+	background-color: #f8f9fa;
+}
+
+.select-options .add-option .btn {
+	margin-block: .5rem;
+}
+
+small.info-message {
+	display: flex;
+    width: 100%;
+    align-items: center;
+    gap: .25rem;
+	padding-top: .5rem;
+}
+
+.select-options small.info-message i.icon-check {
+	width: 15px;
+    height: 15px;
+    font-size: 7px;
+}

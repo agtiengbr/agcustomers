@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="ModulesAgcustomersAdmin" source-language="en" target-language="pt-BR" datatype="plaintext">
+    <body>
+      <trans-unit id="t0001"><source>AGTI Customer Registration PRO</source><target state="translated">Cadastro e Login Social</target></trans-unit>
+      <trans-unit id="t0002"><source>Allows your customers to register and log in to your store through Facebook and Google. Allows you to add custom fields to PrestaSHop registration form.</source><target state="translated">Permite que seus clientes se cadastrem e façam login na sua loja via Facebook e Google. Permite adicionar campos personalizados ao formulário de cadastro do PrestaShop.</target></trans-unit>
+      <trans-unit id="t0003"><source>Registration module (AGTI)</source><target state="translated">Módulo de cadastro</target></trans-unit>
+      <trans-unit id="t0004"><source>Order preview (AGTI)</source><target state="translated">Pré-visualização do pedido</target></trans-unit>
+      <trans-unit id="t0005"><source>Registration settings</source><target state="translated">Configurações de cadastro</target></trans-unit>
+
+      <trans-unit id="t0010"><source>Customer Form</source><target state="translated">Formulário do cliente</target></trans-unit>
+      <trans-unit id="t0011"><source>Address Form</source><target state="translated">Formulário de endereço</target></trans-unit>
+      <trans-unit id="t0012"><source>Facebook Configuration</source><target state="translated">Configuração do Facebook</target></trans-unit>
+      <trans-unit id="t0013"><source>Google Configuration</source><target state="translated">Configuração do Google</target></trans-unit>
+      <trans-unit id="t0014"><source>Data Import</source><target state="translated">Importação de dados</target></trans-unit>
+      <trans-unit id="t0015"><source>Maintenance</source><target state="translated">Manutenção</target></trans-unit>
+      <trans-unit id="t0016"><source>Help</source><target state="translated">Ajuda</target></trans-unit>
+
+      <trans-unit id="t0020"><source>General settings</source><target state="translated">Configurações gerais</target></trans-unit>
+      <trans-unit id="t0021"><source>Customer type</source><target state="translated">Tipo de cliente</target></trans-unit>
+      <trans-unit id="t0022"><source>Add Field</source><target state="translated">Adicionar campo</target></trans-unit>
+
+      <trans-unit id="t0030"><source>Registration validation mode</source><target state="translated">Modo de validação do cadastro</target></trans-unit>
+      <trans-unit id="t0031"><source>Text message (Simple warning at the top of the page)</source><target state="translated">Mensagem de texto (Aviso simples no topo da página)</target></trans-unit>
+      <trans-unit id="t0032"><source>Modal (Blocks checkout and forces correction)</source><target state="translated">Modal (Bloqueia o checkout e força a correção)</target></trans-unit>
+      <trans-unit id="t0033"><source>None (Disabled)</source><target state="translated">Nenhum (Desativado)</target></trans-unit>
+
+      <trans-unit id="t0040"><source>Place fields</source><target state="translated">Posicionar campos</target></trans-unit>
+      <trans-unit id="t0041"><source>Setup actions</source><target state="translated">Ações de configuração</target></trans-unit>
+      <trans-unit id="t0042"><source>Brazil default settings</source><target state="translated">Configurações padrão Brasil</target></trans-unit>
+      <trans-unit id="t0043"><source>Reset fields</source><target state="translated">Redefinir campos</target></trans-unit>
+      <trans-unit id="t0044"><source>Do not use these actions unless you know exactly what you're doing, as they may cause loss of information in your customers' records.</source><target state="translated">Não use estas ações a menos que você saiba exatamente o que está fazendo, pois elas podem causar perda de informações nos registros dos seus clientes.</target></trans-unit>
+      <trans-unit id="t0045"><source>Brazil: creates CPF and other Brazilian fields (when not authenticated, only CPF is active). Reset: removes module-created fields and restores a minimal setup.</source><target state="translated">Brasil: cria CPF e outros campos brasileiros comuns. Redefinir: remove os campos criados pelo módulo e restaura uma configuração mínima.</target></trans-unit>
+
+      <trans-unit id="t0050"><source>We recommend not editing the "Name" once a person type is in use, as it may cause loss of information in your customers' records.</source><target state="translated">Recomendamos não editar o "Nome" depois que um tipo de pessoa estiver em uso, pois isso pode causar perda de informações nos registros dos seus clientes.</target></trans-unit>
+      <trans-unit id="t0051"><source>Name</source><target state="translated">Nome</target></trans-unit>
+      <trans-unit id="t0052"><source>Identifier used internally. Use only letters, numbers and underscore. Avoid changing when already in use.</source><target state="translated">Identificador usado internamente. Use apenas letras, números e underline. Evite alterar quando já estiver em uso.</target></trans-unit>
+      <trans-unit id="t0053"><source>Label</source><target state="translated">Rótulo</target></trans-unit>
+      <trans-unit id="t0054"><source>Text shown to users. Use the language selector to provide translations.</source><target state="translated">Texto exibido aos usuários. Use o seletor de idioma para fornecer traduções.</target></trans-unit>
+      <trans-unit id="t0055"><source>Enable</source><target state="translated">Ativar</target></trans-unit>
+      <trans-unit id="t0056"><source>Customer group</source><target state="translated">Grupo de clientes</target></trans-unit>
+      <trans-unit id="t0057"><source>You cannot delete default person types</source><target state="translated">Você não pode excluir tipos de pessoa padrão</target></trans-unit>
+      <trans-unit id="t0058"><source>Delete</source><target state="translated">Excluir</target></trans-unit>
+      <trans-unit id="t0059"><source>Add person type</source><target state="translated">Adicionar tipo de pessoa</target></trans-unit>
+
+      <trans-unit id="t0060"><source>Field settings</source><target state="translated">Configurações do campo</target></trans-unit>
+      <trans-unit id="t0061"><source>Field type</source><target state="translated">Tipo do campo</target></trans-unit>
+      <trans-unit id="t0062"><source>Text</source><target state="translated">Texto</target></trans-unit>
+      <trans-unit id="t0063"><source>Dropdown list</source><target state="translated">Lista suspensa</target></trans-unit>
+      <trans-unit id="t0064"><source>Checkboxes</source><target state="translated">Caixas de seleção</target></trans-unit>
+      <trans-unit id="t0065"><source>Available options</source><target state="translated">Opções disponíveis</target></trans-unit>
+      <trans-unit id="t0066"><source>Option value</source><target state="translated">Valor da opção</target></trans-unit>
+      <trans-unit id="t0067"><source>Displayed text</source><target state="translated">Texto exibido</target></trans-unit>
+      <trans-unit id="t0068"><source>Add option</source><target state="translated">Adicionar opção</target></trans-unit>
+      <trans-unit id="t0069"><source>Note: To save an option, confirm using the icon</source><target state="translated">Observação: para salvar uma opção, confirme usando o ícone</target></trans-unit>
+
+      <trans-unit id="t0070"><source>We recommend not editing the "Name" once the field is in use, as it may cause loss of information in your customers' records.</source><target state="translated">Recomendamos não editar o "Nome" depois que o campo estiver em uso, pois isso pode causar perda de informações nos registros dos seus clientes.</target></trans-unit>
+      <trans-unit id="t0071"><source>Technical identifier (column name). Must start with a letter, and contain only letters, numbers, and underscore. Must be unique on customer table.</source><target state="translated">Identificador técnico (nome da coluna). Deve começar com uma letra e conter apenas letras, números e underline. Deve ser único na tabela de clientes.</target></trans-unit>
+      <trans-unit id="t0072"><source>Display</source><target state="translated">Exibição</target></trans-unit>
+      <trans-unit id="t0073"><source>Required</source><target state="translated">Obrigatório</target></trans-unit>
+      <trans-unit id="t0074"><source>Prevent duplication</source><target state="translated">Evitar duplicidade</target></trans-unit>
+      <trans-unit id="t0075"><source>If enabled, prevents duplicate values for different customers.</source><target state="translated">Se ativado, impede valores duplicados para clientes diferentes.</target></trans-unit>
+      <trans-unit id="t0076"><source>Allow customer to edit</source><target state="translated">Permitir que o cliente edite</target></trans-unit>
+      <trans-unit id="t0077"><source>Allow employees to edit</source><target state="translated">Permitir que os funcionários editem</target></trans-unit>
+      <trans-unit id="t0078"><source>Mask</source><target state="translated">Máscara</target></trans-unit>
+      <trans-unit id="t0079"><source>Optional input mask. Use 0 for digits (e.g. 000.000.000-00). Leave empty to disable.</source><target state="translated">Máscara opcional de entrada. Use 0 para dígitos (ex.: 000.000.000-00). Deixe vazio para desativar.</target></trans-unit>
+
+      <trans-unit id="t0080"><source>display error messages when required fields are empty</source><target state="translated">exibir mensagens de erro quando campos obrigatórios estiverem vazios</target></trans-unit>
+      <trans-unit id="t0081"><source>lock the address when it is auto-filled from the zip code</source><target state="translated">bloquear o endereço quando for preenchido automaticamente pelo CEP</target></trans-unit>
+      <trans-unit id="t0082"><source>Required fields</source><target state="translated">Campos obrigatórios</target></trans-unit>
+
+      <trans-unit id="t0090"><source>Google login is available only in the licensed version of the module.</source><target state="translated">O login do Google está disponível apenas na versão licenciada do módulo.</target></trans-unit>
+      <trans-unit id="t0091"><source>Display floating window for login with google</source><target state="translated">Exibir janela flutuante para login com o Google</target></trans-unit>
+      <trans-unit id="t0092"><source>Client Id</source><target state="translated">Client ID</target></trans-unit>
+      <trans-unit id="t0093"><source>Customizing the google login button</source><target state="translated">Personalizando o botão de login do Google</target></trans-unit>
+      <trans-unit id="t0094"><source>Type</source><target state="translated">Tipo</target></trans-unit>
+      <trans-unit id="t0095"><source>standard</source><target state="translated">padrão</target></trans-unit>
+      <trans-unit id="t0096"><source>icon</source><target state="translated">ícone</target></trans-unit>
+      <trans-unit id="t0097"><source>Theme</source><target state="translated">Tema</target></trans-unit>
+      <trans-unit id="t0098"><source>White</source><target state="translated">Branco</target></trans-unit>
+      <trans-unit id="t0099"><source>Blue</source><target state="translated">Azul</target></trans-unit>
+      <trans-unit id="t0100"><source>Black</source><target state="translated">Preto</target></trans-unit>
+      <trans-unit id="t0101"><source>Size</source><target state="translated">Tamanho</target></trans-unit>
+      <trans-unit id="t0102"><source>large</source><target state="translated">grande</target></trans-unit>
+      <trans-unit id="t0103"><source>medium</source><target state="translated">médio</target></trans-unit>
+      <trans-unit id="t0104"><source>small</source><target state="translated">pequeno</target></trans-unit>
+      <trans-unit id="t0105"><source>text to be displayed</source><target state="translated">texto a ser exibido</target></trans-unit>
+      <trans-unit id="t0106"><source>signin with Google</source><target state="translated">entrar com o Google</target></trans-unit>
+      <trans-unit id="t0107"><source>signup with Google</source><target state="translated">cadastrar-se com o Google</target></trans-unit>
+      <trans-unit id="t0108"><source>continue with Google</source><target state="translated">continuar com o Google</target></trans-unit>
+      <trans-unit id="t0109"><source>shape</source><target state="translated">formato</target></trans-unit>
+      <trans-unit id="t0110"><source>pill</source><target state="translated">pílula</target></trans-unit>
+      <trans-unit id="t0111"><source>circle</source><target state="translated">círculo</target></trans-unit>
+      <trans-unit id="t0112"><source>square</source><target state="translated">quadrado</target></trans-unit>
+      <trans-unit id="t0113"><source>logo alignment</source><target state="translated">alinhamento do logotipo</target></trans-unit>
+      <trans-unit id="t0114"><source>left</source><target state="translated">esquerda</target></trans-unit>
+      <trans-unit id="t0115"><source>center</source><target state="translated">centro</target></trans-unit>
+
+      <trans-unit id="t0120"><source>URLs to insert in %s field</source><target state="translated">URLs para inserir no campo %s</target></trans-unit>
+      <trans-unit id="t0121"><source>APP ID</source><target state="translated">APP ID</target></trans-unit>
+      <trans-unit id="t0122"><source>Secret Key</source><target state="translated">Chave secreta</target></trans-unit>
+      <trans-unit id="t0123"><source>API Version</source><target state="translated">Versão da API</target></trans-unit>
+
+      <trans-unit id="t0130"><source>The import will start in a new window. Please keep it open until it finishes.</source><target state="translated">A importação será iniciada em uma nova janela. Mantenha-a aberta até finalizar.</target></trans-unit>
+      <trans-unit id="t0131"><source>Did your store really have the chosen module? This operation is irreversible and data loss may occur if used incorrectly.</source><target state="translated">Sua loja realmente tinha o módulo escolhido? Esta operação é irreversível e pode ocorrer perda de dados se usada incorretamente.</target></trans-unit>
+      <trans-unit id="t0132"><source>Import from FkCustomers module</source><target state="translated">Importar do módulo FkCustomers</target></trans-unit>
+      <trans-unit id="t0133"><source>Import from djtal Brazilian Registration module</source><target state="translated">Importar do módulo djtal Brazilian Registration</target></trans-unit>
+
+      <trans-unit id="t0140"><source>Field name "%name%" is duplicated.</source><target state="translated">O nome do campo "%name%" está duplicado.</target></trans-unit>
+      <trans-unit id="t0141"><source>Invalid column name "%name%". Use only letters and numbers!</source><target state="translated">Nome de coluna inválido "%name%". Use apenas letras e números!</target></trans-unit>
+      <trans-unit id="t0142"><source>Settings saved successfully!</source><target state="translated">Configurações salvas com sucesso!</target></trans-unit>
+
+      <trans-unit id="t0150"><source>New field</source><target state="translated">Novo campo</target></trans-unit>
+      <trans-unit id="t0151"><source>You cannot remove one of the module default fields.</source><target state="translated">Você não pode remover um dos campos padrão do módulo.</target></trans-unit>
+      <trans-unit id="t0152"><source>Do you really want to delete this customer field? This operation is irreversible and will be processed after saving the form.</source><target state="translated">Deseja realmente excluir este campo de cliente? Esta operação é irreversível e será processada após salvar o formulário.</target></trans-unit>
+      <trans-unit id="t0153"><source>This operation is irreversible. Do you really want to delete this person type?</source><target state="translated">Esta operação é irreversível. Deseja realmente excluir este tipo de pessoa?</target></trans-unit>
+      <trans-unit id="t0154"><source>Do you really want to reset the fields to the module initial configuration? This operation is irreversible.</source><target state="translated">Deseja realmente redefinir os campos para a configuração inicial do módulo? Esta operação é irreversível.</target></trans-unit>
+      <trans-unit id="t0155"><source>Do you really want to reset the module overrides? This operation is irreversible.</source><target state="translated">Deseja realmente redefinir os overrides do módulo? Esta operação é irreversível.</target></trans-unit>
+      <trans-unit id="t0156"><source>Apply Brazil default settings? This will preconfigure common Brazilian fields.</source><target state="translated">Aplicar configurações padrão do Brasil? Isso irá pré-configurar campos comuns do Brasil.</target></trans-unit>
+
+      <trans-unit id="t0160"><source>CPF</source><target state="translated">CPF</target></trans-unit>
+      <trans-unit id="t0161"><source>RG</source><target state="translated">RG</target></trans-unit>
+      <trans-unit id="t0162"><source>Business name</source><target state="translated">Razão social</target></trans-unit>
+      <trans-unit id="t0163"><source>CNPJ</source><target state="translated">CNPJ</target></trans-unit>
+      <trans-unit id="t0164"><source>State registration</source><target state="translated">Inscrição estadual</target></trans-unit>
+      <trans-unit id="t0165"><source>N/A</source><target state="translated">N/D</target></trans-unit>
+
+      <!-- Additional Admin labels used in PHP/configuration -->
+      <trans-unit id="t0200"><source>Number</source><target state="translated">Número</target></trans-unit>
+  <trans-unit id="t0200a"><source>First name</source><target state="translated">Nome</target></trans-unit>
+  <trans-unit id="t0200b"><source>Last name</source><target state="translated">Sobrenome</target></trans-unit>
+  <trans-unit id="t0200c"><source>Date of birth</source><target state="translated">Data de nascimento</target></trans-unit>
+  <trans-unit id="t0200d"><source>Address</source><target state="translated">Endereço</target></trans-unit>
+  <trans-unit id="t0200e"><source>Address line 2</source><target state="translated">Complemento</target></trans-unit>
+  <trans-unit id="t0200f"><source>Additional information</source><target state="translated">Informações adicionais</target></trans-unit>
+  <trans-unit id="t0200g"><source>Zip/Postal code</source><target state="translated">CEP</target></trans-unit>
+  <trans-unit id="t0200h"><source>City</source><target state="translated">Cidade</target></trans-unit>
+  <trans-unit id="t0200i"><source>State</source><target state="translated">Estado</target></trans-unit>
+  <trans-unit id="t0200j"><source>Country</source><target state="translated">País</target></trans-unit>
+  <trans-unit id="t0200k"><source>Phone</source><target state="translated">Telefone</target></trans-unit>
+  <trans-unit id="t0200l"><source>Mobile phone</source><target state="translated">Celular</target></trans-unit>
+  <trans-unit id="t0200m"><source>Individual</source><target state="translated">Pessoa física</target></trans-unit>
+  <trans-unit id="t0200n"><source>Company</source><target state="translated">Pessoa jurídica</target></trans-unit>
+  <trans-unit id="t0200o"><source>Foreign person</source><target state="translated">Estrangeiro</target></trans-unit>
+      <trans-unit id="t0201"><source>New field</source><target state="translated">Novo campo</target></trans-unit>
+      <trans-unit id="t0202"><source>You cannot remove one of the module default fields.</source><target state="translated">Você não pode remover um dos campos padrão do módulo.</target></trans-unit>
+      <trans-unit id="t0203"><source>Do you really want to delete this customer field? This operation is irreversible and will be processed after saving the form.</source><target state="translated">Deseja realmente excluir este campo de cliente? Esta operação é irreversível e será processada após salvar o formulário.</target></trans-unit>
+      <trans-unit id="t0204"><source>This operation is irreversible. Do you really want to delete this person type?</source><target state="translated">Esta operação é irreversível. Deseja realmente excluir este tipo de pessoa?</target></trans-unit>
+      <trans-unit id="t0205"><source>Do you really want to reset the fields to the module initial configuration? This operation is irreversible.</source><target state="translated">Deseja realmente redefinir os campos para a configuração inicial do módulo? Esta operação é irreversível.</target></trans-unit>
+      <trans-unit id="t0206"><source>Do you really want to reset the module overrides? This operation is irreversible.</source><target state="translated">Deseja realmente redefinir os overrides do módulo? Esta operação é irreversível.</target></trans-unit>
+      <trans-unit id="t0207"><source>Apply Brazil default settings? This will preconfigure common Brazilian fields.</source><target state="translated">Aplicar configurações padrão do Brasil? Isso irá pré-configurar campos comuns do Brasil.</target></trans-unit>
+
+      <!-- Age limit settings -->
+      <trans-unit id="t0210"><source>Minimum age (years)</source><target state="translated">Idade mínima (anos)</target></trans-unit>
+      <trans-unit id="t0211"><source>Maximum age (years)</source><target state="translated">Idade máxima (anos)</target></trans-unit>
+      <trans-unit id="t0212"><source>Leave 0 to disable minimum age check.</source><target state="translated">Deixe 0 para desativar a verificação de idade mínima.</target></trans-unit>
+      <trans-unit id="t0213"><source>Leave 0 to disable maximum age check.</source><target state="translated">Deixe 0 para desativar a verificação de idade máxima.</target></trans-unit>
+    </body>
+  </file>
+</xliff>
