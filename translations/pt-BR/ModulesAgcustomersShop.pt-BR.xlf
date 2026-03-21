@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="ModulesAgcustomersShop" source-language="en" target-language="pt-BR" datatype="plaintext">
+    <body>
+      <trans-unit id="m0001"><source>Issues found in your registration</source><target state="translated">Problemas encontrados no seu cadastro</target></trans-unit>
+      <trans-unit id="m0002"><source>To proceed with the purchase, please correct the fields below:</source><target state="translated">Para prosseguir com a compra, corrija os campos abaixo:</target></trans-unit>
+      <trans-unit id="s0001"><source>Enter with Facebook</source><target state="translated">Entrar com Facebook</target></trans-unit>
+      <trans-unit id="s0002"><source>Customer type</source><target state="translated">Tipo de cliente</target></trans-unit>
+      <trans-unit id="s0003"><source>Saving...</source><target state="translated">Salvando...</target></trans-unit>
+      <trans-unit id="s0004"><source>Data updated successfully! The page will reload.</source><target state="translated">Dados atualizados com sucesso! A página será recarregada.</target></trans-unit>
+      <trans-unit id="s0005"><source>Please correct the following errors:</source><target state="translated">Por favor, corrija os seguintes erros:</target></trans-unit>
+      <trans-unit id="s0006"><source>An unexpected error occurred. Try again.</source><target state="translated">Ocorreu um erro inesperado. Tente novamente.</target></trans-unit>
+      <trans-unit id="s0007"><source>Save and continue</source><target state="translated">Salvar e continuar</target></trans-unit>
+      <trans-unit id="s0008"><source>Number</source><target state="translated">Número</target></trans-unit>
+      <trans-unit id="s0009"><source>already registered.</source><target state="translated">já cadastrado.</target></trans-unit>
+      <trans-unit id="s0010"><source>Please make sure you have filled in all required fields.</source><target state="translated">Certifique-se de que preencheu todos os campos obrigatórios.</target></trans-unit>
+      <trans-unit id="s0011"><source>Fix your registration to continue</source><target state="translated">Corrija seu cadastro para continuar</target></trans-unit>
+      <trans-unit id="s0012"><source>Use your account to make identification easier. Only your first name, last name and email address will be stored.</source><target state="translated">Use sua conta para facilitar a identificação. Somente seu nome, sobrenome e e-mail serão armazenados.</target></trans-unit>
+      <trans-unit id="s0013"><source>Your delivery address is incomplete.</source><target state="translated">Seu endereço de entrega está incompleto.</target></trans-unit>
+      <trans-unit id="s0014"><source>Your invoice address is incomplete.</source><target state="translated">Seu endereço de faturamento está incompleto.</target></trans-unit>
+      <trans-unit id="s0015"><source>Person type</source><target state="translated">Tipo de pessoa</target></trans-unit>
+      <trans-unit id="s0016"><source>The field "Person type" is required.</source><target state="translated">O campo "Tipo de pessoa" é obrigatório.</target></trans-unit>
+      <trans-unit id="s0017"><source>The field %s is required.</source><target state="translated">O campo %s é obrigatório.</target></trans-unit>
+      <trans-unit id="s0017a"><source>The field %label% is required.</source><target state="translated">O campo %label% é obrigatório.</target></trans-unit>
+      <trans-unit id="s0019a"><source>The field %label% must be a valid date (YYYY-MM-DD).</source><target state="translated">O campo %label% deve ser uma data válida (YYYY-MM-DD).</target></trans-unit>
+      <trans-unit id="s0018"><source>%label% already registered.</source><target state="translated">%label% já cadastrado.</target></trans-unit>
+      <!-- Age validation messages and label (Shop domain) -->
+      <trans-unit id="s0020"><source>You must be at least %min% years old.</source><target state="translated">Você deve ter pelo menos %min% anos.</target></trans-unit>
+      <trans-unit id="s0021"><source>The maximum allowed age is %max% years.</source><target state="translated">A idade máxima permitida é %max% anos.</target></trans-unit>
+      <trans-unit id="s0022"><source>Date of birth</source><target state="translated">Data de nascimento</target></trans-unit>
+    </body>
+  </file>
+</xliff>

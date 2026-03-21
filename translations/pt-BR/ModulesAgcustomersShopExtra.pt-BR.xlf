@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="ModulesAgcustomersShopExtra" source-language="en" target-language="pt-BR" datatype="plaintext">
+    <body>
+      <trans-unit id="sx001"><source>Your delivery address is incomplete.</source><target state="translated">Seu endereço de entrega está incompleto.</target></trans-unit>
+      <trans-unit id="sx002"><source>Your invoice address is incomplete.</source><target state="translated">Seu endereço de faturamento está incompleto.</target></trans-unit>
+      <trans-unit id="sx003"><source>Person type</source><target state="translated">Tipo de pessoa</target></trans-unit>
+      <trans-unit id="sx004"><source>The field "Person type" is required.</source><target state="translated">O campo "Tipo de pessoa" é obrigatório.</target></trans-unit>
+      <trans-unit id="sx005"><source>The field %s is required.</source><target state="translated">O campo %s é obrigatório.</target></trans-unit>
+    </body>
+  </file>
+</xliff>

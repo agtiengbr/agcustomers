@@ -1,0 +1,24 @@
+#ag-checkout-validation-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#ag-checkout-validation-modal {
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 5px;
+    width: 90%;
+    max-width: 500px;
+}
+
+#ag-checkout-validation-form .form-footer { margin-top: 20px; }
+.ag-validation-messages .error { color: red; }
+.ag-validation-messages .success { color: green; }
