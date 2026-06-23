@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+    <name>agcustomers</name>
+    <displayName><![CDATA[AGTI Customer Registration PRO]]></displayName>
+    <version><![CDATA[2.8.9]]></version>
+    <description><![CDATA[Allows your customers to register and log in to your store through Facebook and Google. Allows you to add custom fields to PrestaSHop registration form.]]></description>
+    <author><![CDATA[AGTI]]></author>
+    <tab><![CDATA[Others]]></tab>
+    <is_configurable>1</is_configurable>
+    <need_instance>1</need_instance>
+    <limited_countries></limited_countries>
+</module>
