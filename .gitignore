@@ -2,3 +2,5 @@ composer.lock
 composer.json
 config_br.xml
 zips/
+
+dist/
