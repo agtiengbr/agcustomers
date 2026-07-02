@@ -11,6 +11,9 @@
       <trans-unit id="s0020"><source>You must be at least %min% years old.</source><target state="translated">You must be at least %min% years old.</target></trans-unit>
       <trans-unit id="s0021"><source>The maximum allowed age is %max% years.</source><target state="translated">The maximum allowed age is %max% years.</target></trans-unit>
       <trans-unit id="s0022"><source>Date of birth</source><target state="translated">Date of birth</target></trans-unit>
+      <trans-unit id="s0023"><source>Your delivery address is incomplete. To place your order, please complete your registration by</source><target state="translated">Your delivery address is incomplete. To place your order, please complete your registration by</target></trans-unit>
+      <trans-unit id="s0024"><source>Your invoice address is incomplete. To place your order, please complete your registration by</source><target state="translated">Your invoice address is incomplete. To place your order, please complete your registration by</target></trans-unit>
+      <trans-unit id="s0025"><source>clicking here</source><target state="translated">clicking here</target></trans-unit>
     </body>
   </file>
 </xliff>
