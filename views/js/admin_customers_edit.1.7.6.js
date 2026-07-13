@@ -1,7 +1,12 @@
 $(function(){
     var agcustomers;
     var options;
-    var container_customer = $(' #customer_form');
+    var container_customer = $('#customer_form, form[name=customer]').not('#customer_filter_form');
+
+    if (!container_customer.length) {
+        return;
+    }
+
     var panel = container_customer.find('#fieldset_0 .form-wrapper');
 
     function getLangData(array_datas, id_lang)
@@ -147,7 +152,11 @@ $(function(){
 
     function loadOptions(email, success)
     {
-        $.getJSON(agcustomers_url_load_options + '&email=' + email, function(data){
+        if (!email || email === 'undefined') {
+            email = '';
+        }
+
+        $.getJSON(agcustomers_url_load_options + '&email=' + encodeURIComponent(email), function(data){
             agcustomers = data;
             options = data.options;
             success(data);
@@ -271,7 +280,7 @@ $(function(){
             });
         });
 
-        $('form[name=customer]').submit(function(){
+        container_customer.submit(function(){
             $('.has-error').removeClass('has-error');
             validateInputs();
 
@@ -382,7 +391,7 @@ $(function(){
         var value = $(input).val();
 
         if (value == '' || typeof value === 'undefined') {
-            if (input.is(':required')) {
+            if (input.prop('required')) {
                 input.closest('.form-group')
                     .addClass('has-error').addClass('form-error')
                     .removeClass('has-success').removeClass('form-success');

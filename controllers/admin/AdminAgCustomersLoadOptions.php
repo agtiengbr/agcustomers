@@ -6,15 +6,17 @@ class AdminAgCustomersLoadOptionsController extends ModuleAdminController
         parent::__construct();
 
         $email = Tools::getValue('email');
-        if ($email) {
-            $customer = (new Customer)->getByEmail($email);
+        $customer_data = [];
 
-            $sql = new DbQuery;
-            $sql->from('customer')->where('id_customer=' . (int)$customer->id);
+        if (!empty($email) && $email !== 'undefined' && Validate::isEmail($email)) {
+            $customer = (new Customer())->getByEmail($email);
 
-            $customer_data = Db::getInstance()->getRow($sql);
-        } else {
-            $customer_data = [];
+            if (Validate::isLoadedObject($customer)) {
+                $sql = new DbQuery();
+                $sql->from('customer')->where('id_customer=' . (int) $customer->id);
+
+                $customer_data = Db::getInstance()->getRow($sql);
+            }
         }
         
         /** @var AgCustomers */
