@@ -66,7 +66,7 @@ class BaseAgCustomers extends AgModule
     {
         $this->name     = 'agcustomers';
         $this->tab      = 'Others';
-        $this->version  = '2.8.11';
+        $this->version  = '2.8.12';
         $this->author   = 'AGTI';
 
         $this->bootstrap = true;
@@ -889,16 +889,25 @@ class BaseAgCustomers extends AgModule
                     $this->_path . '/views/js/admin_customers_edit.js'
                 ]);
             } else {
-            Media::addJsDef([
-                'agcustomers_id_customer' => Tools::getValue('id_customer'),
+                Media::addJsDef([
+                    'agcustomers_id_customer' => Tools::getValue('id_customer'),
+                ]);
 
-            ]);
-                $this->context->controller->addJS([
-                    __PS_BASE_URI__ . $this->context->controller->admin_webpath . '/themes/new-theme/public/main.bundle.js',
+                $js = [
                     $this->_path . '/views/js/jquery.mask.min.js',
                     $this->_path . '/views/js/admin_customers_view.1.7.6.js',
-                    $this->_path . '/views/js/admin_customers_edit.1.7.6.js'
-                ]);
+                ];
+
+                $requestUri = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '';
+                $isCustomerCreateOrEdit = Tools::getValue('id_customer')
+                    || strpos($requestUri, '/customers/new') !== false
+                    || (bool) preg_match('#/customers/[0-9]+/edit#', $requestUri);
+
+                if ($isCustomerCreateOrEdit) {
+                    $js[] = $this->_path . '/views/js/admin_customers_edit.1.7.6.js';
+                }
+
+                $this->context->controller->addJS($js);
             }
         }
         
