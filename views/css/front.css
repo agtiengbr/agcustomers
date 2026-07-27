@@ -30,3 +30,9 @@
 body:not(#address) .agcustomers-error {
     padding-top: 5px !important;
 }
+
+select.agcustomers-field-locked {
+    pointer-events: none;
+    background-color: #e9ecef;
+    cursor: not-allowed;
+}

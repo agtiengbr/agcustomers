@@ -66,7 +66,7 @@ class BaseAgCustomers extends AgModule
     {
         $this->name     = 'agcustomers';
         $this->tab      = 'Others';
-        $this->version  = '2.8.12';
+        $this->version  = '2.8.13';
         $this->author   = 'AGTI';
 
         $this->bootstrap = true;
