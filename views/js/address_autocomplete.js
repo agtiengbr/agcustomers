@@ -41,6 +41,84 @@ $(function(){
 	var is_onepagecheckout = $('#onepagecheckoutps').length === 1;
 	var is_authentication = $('#authentication').length === 1;
 
+	function isAddressLockEnabled()
+	{
+		return agcustomers.config.address.disabled == 1;
+	}
+
+	function setFieldLocked($field, locked)
+	{
+		if (!$field || !$field.length) {
+			return;
+		}
+
+		if ($field.is('select')) {
+			if (locked) {
+				$field
+					.addClass('agcustomers-field-locked')
+					.attr('aria-disabled', 'true')
+					.data('agcustomers-locked', true)
+					.on('mousedown.agcustomers keydown.agcustomers focus.agcustomers', function (e) {
+						e.preventDefault();
+						this.blur();
+						return false;
+					});
+			} else {
+				$field
+					.removeClass('agcustomers-field-locked')
+					.removeAttr('aria-disabled')
+					.removeData('agcustomers-locked')
+					.off('.agcustomers');
+			}
+
+			return;
+		}
+
+		$field.prop('readonly', !!locked);
+	}
+
+	function unlockAutocompleteFields()
+	{
+		$.each([input_city, input_state, input_address, input_district, input_postcode], function(_, $field) {
+			setFieldLocked($field, false);
+		});
+	}
+
+	function selectStateValue(stateCode)
+	{
+		if (!stateCode || !input_state || !input_state.length) {
+			return;
+		}
+
+		var normalized = String(stateCode).trim();
+		var stateName = brazil_states[normalized] || normalized;
+		var option = input_state.find('option').filter(function () {
+			var $opt = $(this);
+
+			return $opt.data('iso') === normalized
+				|| String($opt.val()) === normalized
+				|| $.trim($opt.text()) === normalized
+				|| $.trim($opt.text()) === stateName;
+		}).first();
+
+		if (option.length) {
+			input_state.val(option.val()).trigger('change');
+		}
+	}
+
+	function lockAddressFieldsFromAutocomplete(address)
+	{
+		if (!isAddressLockEnabled()) {
+			unlockAutocompleteFields();
+			return;
+		}
+
+		setFieldLocked(input_address, !!(address.street && address.street.trim()));
+		setFieldLocked(input_district, !!(address.district && address.district.trim()));
+		setFieldLocked(input_city, !!(address.city && address.city.trim()));
+		setFieldLocked(input_state, !!(address.state && String(address.state).trim()));
+	}
+
 	function loadInputsVars()
 	{
 		if (is_onepagecheckout) {
@@ -90,58 +168,25 @@ $(function(){
 			}
 
 
-			$([input_city, input_state, input_address, input_postcode]).prop('readonly', true);
+			setFieldLocked(input_city, true);
+			setFieldLocked(input_state, true);
+			setFieldLocked(input_address, true);
+			setFieldLocked(input_postcode, true);
 
 			jqxhr = $.ajax({
 				url: agcustomers_address_search_url + '?postcode=' + postcode,
 				dataType : 'JSON',
 				success : function(address){
-					$([input_city, input_state, input_address, input_postcode]).prop('readonly', false);
+					unlockAutocompleteFields();
 					input_address.val(address.street);
 					input_district.val(address.district);
 					input_city.val(address.city);
-
-					var option = input_state.find('option').filter(function () { return $(this).html() == address.state; });
-
-					if (option.length === 0) {
-						var state = brazil_states[address.state];
-						var option = input_state.find('option').prop('selected', false).filter(function () { return $(this).html() == state; });
-					}
-
-					option.prop('selected', true);
-					input_state.val(option.val());
-					input_state.change();
-
-					if(agcustomers.config.address.disabled == 1){
-						if (address.street.trim()) {
-							input_address.prop('readonly', true);
-						} else {
-							input_address.prop('readonly', false);
-						}
-
-						if (address.district.trim()) {
-							input_district.prop('readonly', true);
-						} else {
-							input_district.prop('readonly', false);
-						}
-
-						input_city.prop('readonly', true);
-						input_state.prop('readonly', true);
-						
-					}else{
-						input_city.prop('readonly', false);
-						input_state.prop('readonly', false);
-						input_address.prop('readonly', false);
-						input_district.prop('readonly', false);
-					}
+					selectStateValue(address.state);
+					lockAddressFieldsFromAutocomplete(address);
 				},
 				complete: function(){
-					if(agcustomers.config.address.disabled != 1){
-						$(input_city).removeAttr('readonly').trigger('change');
-						$(input_state).removeAttr('readonly').trigger('change');
-						$(input_address).removeAttr('readonly').trigger('change');
-						$(input_district).removeAttr('readonly').trigger('change');
-						$(input_postcode).removeAttr('readonly').trigger('change');
+					if(!isAddressLockEnabled()){
+						unlockAutocompleteFields();
 					}
 					validateInputs();
 				}
@@ -192,6 +237,49 @@ $(function(){
     function markInputAsValid(input) {
        	$(input).closest('.form-group').removeClass('has-error').removeClass('form-error').find('.agcustomers-error').remove();;
     }
+
+	function lockShippingModalStateField()
+	{
+		if (!isAddressLockEnabled()) {
+			return;
+		}
+
+		var $state = $('#agti-shipping-address-registration-modal [name=id_state]');
+		if ($state.length && $state.val()) {
+			setFieldLocked($state, true);
+		}
+	}
+
+	function isAddressSearchRequest(url)
+	{
+		if (!url) {
+			return false;
+		}
+
+		var normalizedUrl = String(url).toLowerCase();
+		return normalizedUrl.indexOf('addresssearch') !== -1;
+	}
+
+	$(document).ajaxSuccess(function (event, xhr, settings) {
+		if (!isAddressSearchRequest(settings.url)) {
+			return;
+		}
+
+		setTimeout(lockShippingModalStateField, 0);
+	});
+
+	$(document).on('shown.bs.modal', '#agti-shipping-address-registration-modal', function () {
+		var attempts = 0;
+		var lockInterval = setInterval(function () {
+			attempts++;
+			lockShippingModalStateField();
+
+			var $state = $('#agti-shipping-address-registration-modal [name=id_state]');
+			if (($state.length && $state.val()) || attempts >= 20) {
+				clearInterval(lockInterval);
+			}
+		}, 200);
+	});
 
 	var interval = setInterval(function(){
 		loadInputsVars();
