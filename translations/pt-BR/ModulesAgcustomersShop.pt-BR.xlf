@@ -31,6 +31,8 @@
       <trans-unit id="s0023"><source>Your delivery address is incomplete. To place your order, please complete your registration by</source><target state="translated">Seu endereço de entrega está incompleto. Para concluir o seu pedido, complete seu cadastro</target></trans-unit>
       <trans-unit id="s0024"><source>Your invoice address is incomplete. To place your order, please complete your registration by</source><target state="translated">Seu endereço de faturamento está incompleto. Para concluir o seu pedido, complete seu cadastro</target></trans-unit>
       <trans-unit id="s0025"><source>clicking here</source><target state="translated">clicando aqui</target></trans-unit>
+      <trans-unit id="s0026"><source>The CPF is invalid.</source><target state="translated">O CPF é inválido.</target></trans-unit>
+      <trans-unit id="s0027"><source>The CNPJ is invalid.</source><target state="translated">O CNPJ é inválido.</target></trans-unit>
     </body>
   </file>
 </xliff>

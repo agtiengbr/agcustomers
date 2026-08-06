@@ -19,6 +19,7 @@ class BaseAgCustomers extends AgModule
         'actionAdminControllerSetMedia',
         'displayAdminOrderContentOrder',
         'additionalCustomerFormFields',
+        'validateCustomerFormFields',
         'actionAdminCustomersFormModifier',
         'displayBeforeBodyClosingTag',
         'additionalCustomerAddressFormFields',
@@ -66,7 +67,7 @@ class BaseAgCustomers extends AgModule
     {
         $this->name     = 'agcustomers';
         $this->tab      = 'Others';
-        $this->version  = '2.8.13';
+        $this->version  = '2.9.1';
         $this->author   = 'AGTI';
 
         $this->bootstrap = true;
@@ -1114,6 +1115,173 @@ class BaseAgCustomers extends AgModule
         }
 
         return $return;
+    }
+
+    public function hookValidateCustomerFormFields($params)
+    {
+        if (empty($params['fields']) || !is_array($params['fields'])) {
+            return [];
+        }
+
+        $fields = [];
+        foreach ($params['fields'] as $formField) {
+            $fields[$formField->getName()] = $formField;
+        }
+
+        $personType = isset($fields['person_type'])
+            ? $fields['person_type']->getValue()
+            : Tools::getValue('person_type');
+
+        $validatedFields = [];
+        foreach (['cpf', 'cnpj'] as $fieldName) {
+            if (!isset($fields[$fieldName])) {
+                continue;
+            }
+
+            $message = $this->validateCustomerDocument(
+                $fieldName,
+                $fields[$fieldName]->getValue(),
+                $personType
+            );
+
+            if ($message !== true) {
+                $fields[$fieldName]->addError($message);
+                $validatedFields[$fieldName] = $fields[$fieldName];
+            }
+        }
+
+        return $validatedFields;
+    }
+
+    public function validateCustomerDocument($fieldName, $value, $personType)
+    {
+        if (!in_array($fieldName, ['cpf', 'cnpj'], true)) {
+            return true;
+        }
+
+        $field = $this->getCustomerFieldConfiguration($fieldName);
+        if (!$field) {
+            return true;
+        }
+
+        $personType = $this->resolveCustomerPersonType($personType);
+        if (!$personType || empty($field['insert'][$personType])) {
+            return true;
+        }
+
+        $label = $this->getCustomerFieldLabel($field, $fieldName);
+        $document = preg_replace('/\D/', '', (string) $value);
+        if ($document === '') {
+            if (!empty($field['required'][$personType])) {
+                return $this->trans(
+                    'The field %label% is required.',
+                    ['%label%' => $label],
+                    'Modules.Agcustomers.Shop'
+                );
+            }
+
+            return true;
+        }
+
+        $isValid = $fieldName === 'cpf'
+            ? $this->isValidCpf($document)
+            : $this->isValidCnpj($document);
+
+        if ($isValid) {
+            return true;
+        }
+
+        return $this->trans(
+            $fieldName === 'cpf' ? 'The CPF is invalid.' : 'The CNPJ is invalid.',
+            [],
+            'Modules.Agcustomers.Shop'
+        );
+    }
+
+    private function getCustomerFieldConfiguration($fieldName)
+    {
+        foreach ($this->getFields()['customer'] as $field) {
+            if (isset($field['name']) && $field['name'] === $fieldName) {
+                return $field;
+            }
+        }
+
+        return null;
+    }
+
+    private function resolveCustomerPersonType($personType)
+    {
+        if (!empty($personType)) {
+            return $personType;
+        }
+
+        $activePersonTypes = $this->getActiveTypePersons();
+        if (count($activePersonTypes) === 1) {
+            return $activePersonTypes[0]['name'];
+        }
+
+        return null;
+    }
+
+    private function getCustomerFieldLabel(array $field, $fallback)
+    {
+        $label = $field['label'] ?? $fallback;
+        if (!is_array($label)) {
+            return $label;
+        }
+
+        $idLang = (int) $this->context->language->id;
+        return $label[$idLang] ?? reset($label);
+    }
+
+    private function isValidCpf($document)
+    {
+        if (strlen($document) !== 11 || preg_match('/^(\d)\1{10}$/', $document)) {
+            return false;
+        }
+
+        for ($position = 9; $position < 11; $position++) {
+            $sum = 0;
+            for ($index = 0, $weight = $position + 1; $index < $position; $index++, $weight--) {
+                $sum += (int) $document[$index] * $weight;
+            }
+
+            $digit = ($sum * 10) % 11;
+            if ($digit === 10) {
+                $digit = 0;
+            }
+
+            if ((int) $document[$position] !== $digit) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    private function isValidCnpj($document)
+    {
+        if (strlen($document) !== 14 || preg_match('/^(\d)\1{13}$/', $document)) {
+            return false;
+        }
+
+        foreach ([12, 13] as $position) {
+            $sum = 0;
+            $weight = $position === 12 ? 5 : 6;
+
+            for ($index = 0; $index < $position; $index++) {
+                $sum += (int) $document[$index] * $weight;
+                $weight = $weight === 2 ? 9 : $weight - 1;
+            }
+
+            $remainder = $sum % 11;
+            $digit = $remainder < 2 ? 0 : 11 - $remainder;
+            if ((int) $document[$position] !== $digit) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     public function hookActionAdminAddressesFormModifier($params)

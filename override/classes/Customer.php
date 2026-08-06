@@ -228,6 +228,16 @@ class Customer extends CustomerCore
         require_once _PS_MODULE_DIR_ . 'agcustomers/agcustomers.php';
         $module = new agcustomers;
         $fields = $module->getFields();
+
+        $documentValidation = $module->validateCustomerDocument(
+            $fieldName,
+            $value,
+            $this->person_type
+        );
+        if ($documentValidation !== true) {
+            return $documentValidation;
+        }
+
         $agcustomers_field = -1;
         foreach ($fields['customer'] as $field) 
         {

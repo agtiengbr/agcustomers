@@ -48,6 +48,10 @@ class CustomerForm extends CustomerFormCore
             }
         }
 
+        if (!$this->validateAgCustomersDocuments()) {
+            return false;
+        }
+
         $ok = parent::submit();
         if (!$ok && isset($this->formFields['birthday'])) {
             $obj = \DateTime::createFromFormat('Y-m-d', $this->formFields['birthday']->getValue());
@@ -59,5 +63,37 @@ class CustomerForm extends CustomerFormCore
         }
 
         return $ok;
+    }
+
+    private function validateAgCustomersDocuments()
+    {
+        if (!file_exists(_PS_MODULE_DIR_ . 'agcustomers/agcustomers.php')) {
+            return true;
+        }
+
+        require_once _PS_MODULE_DIR_ . 'agcustomers/agcustomers.php';
+        $module = new agcustomers;
+        $personType = isset($this->formFields['person_type'])
+            ? $this->formFields['person_type']->getValue()
+            : Tools::getValue('person_type');
+
+        $isValid = true;
+        foreach (['cpf', 'cnpj'] as $fieldName) {
+            if (!isset($this->formFields[$fieldName])) {
+                continue;
+            }
+
+            $message = $module->validateCustomerDocument(
+                $fieldName,
+                $this->formFields[$fieldName]->getValue(),
+                $personType
+            );
+            if ($message !== true) {
+                $this->formFields[$fieldName]->addError($message);
+                $isValid = false;
+            }
+        }
+
+        return $isValid;
     }
 }
