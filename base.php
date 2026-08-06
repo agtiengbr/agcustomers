@@ -584,6 +584,15 @@ class BaseAgCustomers extends AgModule
 
     public function hookDisplayHeader()
     {
+        $is_hummingbird = false;
+        if (isset($this->context->shop->theme) && method_exists($this->context->shop->theme, 'getName')) {
+            $theme_name = strtolower((string) $this->context->shop->theme->getName());
+            $is_hummingbird = strpos($theme_name, 'hummingbird') !== false;
+        }
+        $registration_js = $is_hummingbird
+            ? $this->_path . '/views/js/registration.hummingbird.js?v=5'
+            : $this->_path . '/views/js/registration.ps17.js';
+
         $this->context->controller->addJs([
             $this->_path . '/views/js/loadingOverlay.js',
             $this->_path . '/views/js/jquery.mask.min.js'
@@ -595,10 +604,16 @@ class BaseAgCustomers extends AgModule
         } else {
             if (in_array($this->context->controller->php_self, ['identity', 'authentication', 'registration', 'address'])) {
                 $this->context->controller->addJs($this->_path . '/views/js/registration.ps17.js');
+                if ($is_hummingbird) {
+                    $this->context->controller->addJs($registration_js);
+                }
             }
 
             if (in_array($this->context->controller->php_self, ['order', 'order-opc']) && !Module::isEnabled('agcheckout')) {
                 $this->context->controller->addJs($this->_path . '/views/js/registration.ps17.js');
+                if ($is_hummingbird) {
+                    $this->context->controller->addJs($registration_js);
+                }
             }
         }
 
@@ -827,6 +842,10 @@ class BaseAgCustomers extends AgModule
                 $this->context->controller->addJs($this->_path . 'views/js/checkout_validation.js');
                 $this->context->controller->addCss($this->_path . 'views/css/checkout_validation.css');
             }
+        }
+
+        if ($is_hummingbird && in_array($this->context->controller->php_self, ['identity', 'authentication', 'registration', 'address', 'order'], true)) {
+            return $this->display(_PS_MODULE_DIR_ . $this->name, 'views/templates/front/registration.hummingbird.tpl');
         }
     }
 
