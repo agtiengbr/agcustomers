@@ -1,6 +1,7 @@
 $(function(){
     var options;
     var id_language;
+    var nativeCustomerFields = ['firstname', 'lastname', 'birthday'];
 
     function getLangData(array_datas, id_lang)
     {
@@ -12,35 +13,51 @@ $(function(){
             return array_datas[id_lang];
         }
 
-        return array_datas['id_lang'];
+        var languages = Object.keys(array_datas);
+        return languages.length ? array_datas[languages[0]] : '';
     }
 
+    function isNativeCustomerField(field)
+    {
+        return field.is_default_input || nativeCustomerFields.indexOf(field.name) !== -1;
+    }
 
     function addInputs(customer_data)
     {
-        var col = $('.col')[0];
-        var card = $(col).find('.card')[0];
-        var container = $(card).find('.card-body');
+        var card = $('.customer-personal-informations-card').first();
+        var container = card.find('.card-body').first();
 
-        var html = '';
+        if (!container.length || container.find('.agcustomers-custom-fields').length) {
+            return;
+        }
+
+        var fields = $('<div/>', { class: 'agcustomers-custom-fields' });
 
         $.each(options.type_person, function(key, value) {
             if (value.name == customer_data.person_type) {
-                html += renderCustomerInfoRow('Person Type', getLangData(value.label, id_language));
+                fields.append(renderCustomerInfoRow('Person Type', getLangData(value.label, id_language)));
                 return false;
             }
         });
         
         $.each(options.fields.customer, function(key, value) {
-            html += renderCustomerInfoRow(getLangData(value.label, id_language), customer_data[value.name]);
+            if (isNativeCustomerField(value)) {
+                return;
+            }
+
+            fields.append(renderCustomerInfoRow(getLangData(value.label, id_language), customer_data[value.name] || ''));
         });
 
-        $(container).append($(html));
+        container.append(fields);
     }
 
-    function loadOptions(email, success)
+    function loadOptions(customerId, success)
     {
-        $.getJSON(agcustomers_url_load_options + '&email=' + email, function(data){
+        $.getJSON(agcustomers_url_load_options + '&id_customer=' + encodeURIComponent(customerId), function(data){
+            if (!data.success || !data.customer_data || !Object.keys(data.customer_data).length) {
+                return;
+            }
+
             options = data.options;
             id_language = data.id_language;
 
@@ -48,14 +65,13 @@ $(function(){
         });
     }
 
-    var link = $('.card-header a');
-    if (link.length == 0) {
+    var customerCard = $('.customer-personal-informations-card').first();
+    var customerId = $.trim(customerCard.find('.customer-id').first().text());
+    if (!customerCard.length || !/^\d+$/.test(customerId)) {
         return;
     }
-    
-    var mail = link.attr('href').split('mailto:')[1];
 
-    loadOptions(mail, function(data){
+    loadOptions(customerId, function(data){
         addInputs(data.customer_data);
     });
 
