@@ -19,7 +19,11 @@ $(function(){
 
     function isNativeCustomerField(field)
     {
-        return field.is_default_input || nativeCustomerFields.indexOf(field.name) !== -1;
+        var isDefaultInput = field.is_default_input === true
+            || field.is_default_input === 1
+            || field.is_default_input === '1';
+
+        return isDefaultInput || nativeCustomerFields.indexOf(field.name) !== -1;
     }
 
     function addInputs(customer_data)
