@@ -18,6 +18,10 @@ $(function(){
         : 'Enter only numbers or leave this field blank if the address has no number.';
 
     $('[name=number]').on('input', function(){
+        var digits = this.value.replace(/[^0-9]/g, '');
+        if (this.value !== digits) {
+            this.value = digits;
+        }
         this.setCustomValidity('');
     }).on('invalid', function(){
         if (this.validity.patternMismatch) {
