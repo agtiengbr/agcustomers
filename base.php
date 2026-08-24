@@ -67,7 +67,7 @@ class BaseAgCustomers extends AgModule
     {
         $this->name     = 'agcustomers';
         $this->tab      = 'Others';
-        $this->version  = '2.9.4';
+        $this->version  = '2.9.5';
         $this->author   = 'AGTI';
 
         $this->bootstrap = true;
@@ -717,6 +717,7 @@ class BaseAgCustomers extends AgModule
             'agcustomers_insert_number_field' => true,
             'agcustomers_require_number_field' => (bool) Configuration::get('AGCUSTOMERS_REQUIRE_NUMBER_FIELD'),
             'agcustomers_number_translation' => $this->trans('Number', [], 'Modules.Agcustomers.Shop'),
+            'agcustomers_number_invalid_message' => $this->trans('Enter only numbers or leave this field blank if the address has no number.', [], 'Modules.Agcustomers.Shop'),
             'agcustomers_cpf' =>    $this->context->customer->cpf,
             'agcustomers_rg' => $this->context->customer->rg,
             'agcustomers_company_name' => $this->context->customer->company_name,

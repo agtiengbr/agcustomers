@@ -13,6 +13,18 @@ $(function(){
         pattern: '[0-9]*'
     });
 
+    var numberInvalidMessage = typeof agcustomers_number_invalid_message !== 'undefined'
+        ? agcustomers_number_invalid_message
+        : 'Enter only numbers or leave this field blank if the address has no number.';
+
+    $('[name=number]').on('input', function(){
+        this.setCustomValidity('');
+    }).on('invalid', function(){
+        if (this.validity.patternMismatch) {
+            this.setCustomValidity(numberInvalidMessage);
+        }
+    });
+
 
     //busca pelo div de "obrigatório" que de fato possua o texto "Campo Obrigatório"
     optional_div = $(

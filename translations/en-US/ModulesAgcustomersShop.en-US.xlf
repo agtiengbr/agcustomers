@@ -14,6 +14,7 @@
       <trans-unit id="s0023"><source>Your delivery address is incomplete. To place your order, please complete your registration by</source><target state="translated">Your delivery address is incomplete. To place your order, please complete your registration by</target></trans-unit>
       <trans-unit id="s0024"><source>Your invoice address is incomplete. To place your order, please complete your registration by</source><target state="translated">Your invoice address is incomplete. To place your order, please complete your registration by</target></trans-unit>
       <trans-unit id="s0025"><source>clicking here</source><target state="translated">clicking here</target></trans-unit>
+      <trans-unit id="s0028"><source>Enter only numbers or leave this field blank if the address has no number.</source><target state="translated">Enter only numbers or leave this field blank if the address has no number.</target></trans-unit>
     </body>
   </file>
 </xliff>

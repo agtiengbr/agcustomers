@@ -33,6 +33,7 @@
       <trans-unit id="s0025"><source>clicking here</source><target state="translated">clicando aqui</target></trans-unit>
       <trans-unit id="s0026"><source>The CPF is invalid.</source><target state="translated">O CPF é inválido.</target></trans-unit>
       <trans-unit id="s0027"><source>The CNPJ is invalid.</source><target state="translated">O CNPJ é inválido.</target></trans-unit>
+      <trans-unit id="s0028"><source>Enter only numbers or leave this field blank if the address has no number.</source><target state="translated">Informe apenas números ou deixe o campo em branco se o endereço não tiver número.</target></trans-unit>
     </body>
   </file>
 </xliff>
