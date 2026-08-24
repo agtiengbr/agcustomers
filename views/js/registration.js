@@ -144,6 +144,11 @@ $(function(){
         var is_address_page = $('#address').length === 1 || $('#checkout-addresses-step form #delivery-address').length === 1;
 
         input_number  = $('[name=number]');
+        input_number.attr({
+            type: 'text',
+            inputmode: 'numeric',
+            pattern: '[0-9]*'
+        });
 
         //não insere campos de CPF, CNPJ, etc na página de edição do endereço
         if (is_address_page) {
@@ -313,10 +318,13 @@ $(function(){
                 //adiciona o campo de número no PS 1.6
                 if (document.getElementById('address1') != null && agcustomers_insert_number_field) {
                     var number = $('<input/>', {
+                        type     : 'text',
                         name     : 'number',
                         id       : 'number',
                         required : agcustomers_require_number_field,
-                        class    : 'form-control'
+                        class    : 'form-control',
+                        inputmode: 'numeric',
+                        pattern  : '[0-9]*'
                     });
 
                     if (typeof agcustomers_address_number !== 'undefined') {

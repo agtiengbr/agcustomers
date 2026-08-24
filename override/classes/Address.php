@@ -6,7 +6,7 @@ class Address extends AddressCore
 
     public function __construct($id = null) 
     {
-        self::$definition['fields']['number'] = array('type' => self::TYPE_STRING, 'validate' => 'isGenericName', 'size' => 20);
+        self::$definition['fields']['number'] = array('type' => self::TYPE_STRING, 'validate' => 'isUnsignedInt', 'size' => 20);
 
         parent::__construct($id);
     }

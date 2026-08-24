@@ -32,7 +32,9 @@ document.addEventListener('DOMContentLoaded', function(){
                 type: 'text',
                 class: 'form-control',
                 name: 'number_address_BO',
-                value: agcustomers['address']['number']
+                value: agcustomers['address']['number'],
+                inputmode: 'numeric',
+                pattern: '[0-9]*'
             });
 
             row.append(label).append(form_control_container);
@@ -50,5 +52,10 @@ document.addEventListener('DOMContentLoaded', function(){
 
 	insertFields();
 	repositionFields();
+	$('[name=number_address_BO]').attr({
+		type: 'text',
+		inputmode: 'numeric',
+		pattern: '[0-9]*'
+	});
 	
 });

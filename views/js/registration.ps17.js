@@ -821,7 +821,12 @@ $(function(){
         }
 
 		$('[name=number]').closest('.form-group').find('label').text(agcustomers_number_translation);
-		$('[name=number]').attr('maxlength', 10);
+		$('[name=number]').attr({
+			type: 'text',
+			inputmode: 'numeric',
+			pattern: '[0-9]*',
+			maxlength: 10
+		});
 
 		addValidations();
 		addMasks();

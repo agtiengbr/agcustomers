@@ -7,6 +7,11 @@ $(function(){
 
     //traduz o campo de número
     $('[name=number]').closest('.form-group').find('label').text(agcustomers_number_translation);
+    $('[name=number]').attr({
+        type: 'text',
+        inputmode: 'numeric',
+        pattern: '[0-9]*'
+    });
 
 
     //busca pelo div de "obrigatório" que de fato possua o texto "Campo Obrigatório"
