@@ -1,4 +1,10 @@
 $(function(){
+	function buildActionUrl(action)
+	{
+		var separator = location.href.indexOf('?') === -1 ? '?' : '&';
+		return location.href + separator + encodeURIComponent(action) + '=1';
+	}
+
 	$('#tabCustomersTypePerson .new_type_person').click(function(){
 		var new_type_person = $('#tabCustomersTypePerson .type-person:first-child').clone();
 
@@ -195,7 +201,7 @@ $(function(){
 		}
 
 		var overlay = loadingOverlay().activate();
-		$.getJSON(location.href + '&resetFields', function(data){
+		$.getJSON(buildActionUrl('resetFields'), function(data){
 			if (data.success) {
 				window.location.reload();
 			} else {
@@ -216,7 +222,7 @@ $(function(){
 		}
 
 		var overlay = loadingOverlay().activate();
-		$.getJSON(location.href + '&resetOverrides', function(data){
+		$.getJSON(buildActionUrl('resetOverrides'), function(data){
 			if (data.success) {
 				window.location.reload();
 			} else {
@@ -237,7 +243,7 @@ $(function(){
 		}
 
 		var overlay = loadingOverlay().activate();
-		$.getJSON(location.href + '&applyBrazilDefaults', function(data){
+		$.getJSON(buildActionUrl('applyBrazilDefaults'), function(data){
 			if (data.success) {
 				window.location.reload();
 			} else {
