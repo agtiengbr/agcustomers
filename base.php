@@ -67,7 +67,7 @@ class BaseAgCustomers extends AgModule
     {
         $this->name     = 'agcustomers';
         $this->tab      = 'Others';
-        $this->version  = '2.9.7';
+        $this->version  = '2.9.8';
         $this->author   = 'AGTI';
 
         $this->bootstrap = true;
@@ -414,7 +414,7 @@ class BaseAgCustomers extends AgModule
         }
         $this->context->controller->addJs([
             $this->_path . '/views/js/loadingOverlay.js',
-            $this->_path . '/views/js/config.js'
+            $this->_path . '/views/js/config.js?v=' . $this->version
         ]);
 
         if (Tools::isSubmit('agcustomers-submit')) {
@@ -568,7 +568,7 @@ class BaseAgCustomers extends AgModule
         ]);
 
         $this->context->controller->addJs([
-            $this->_path . '/views/js/config.js',
+            $this->_path . '/views/js/config.js?v=' . $this->version,
             $this->_path . '/views/js/riot_compiler.min.js'
         ]);
 
