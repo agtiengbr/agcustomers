@@ -67,7 +67,7 @@ class BaseAgCustomers extends AgModule
     {
         $this->name     = 'agcustomers';
         $this->tab      = 'Others';
-        $this->version  = '2.9.8';
+        $this->version  = '2.9.9';
         $this->author   = 'AGTI';
 
         $this->bootstrap = true;
@@ -964,6 +964,11 @@ class BaseAgCustomers extends AgModule
                 $address = new Address(Tools::getValue('id_address'));
             }
             $jsvar['address']['number'] = (int)$address->number;
+            $jsvar['translations']['number_label'] = $this->trans(
+                'Number',
+                [],
+                'Modules.Agcustomers.Admin'
+            );
         }
 
         Media::addJsDef(['agcustomers' => $jsvar]);
